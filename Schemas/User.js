@@ -14,4 +14,4 @@ population: {type: Number, required :true},
 })
 
 const User = mongoose.model('User', UsersSchema )
-module.exports = Countrie
+module.exports = User
