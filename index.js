@@ -10,4 +10,8 @@ app.use('/', router)
 
 app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`))
 
+module.exports = {
+    sk_stripe: process.env.STRIPE_SECRET_KEY,
+}
+
 
