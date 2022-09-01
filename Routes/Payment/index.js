@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express')
 const router = express.Router()
+const {STRIPE_SECRET_KEY} = process.env
 
-const {sk_stripe} = require('../../index.js')
-const stripe = require('stripe')('sk_test_51LcOccAk41Yx3PJS4rMTB8wNblHIM7D0kFHqtQ3i8zqRT7bjOZto95RCsBkco6UZTJ0BLJmtPCMJ7N2H0pDkeWjA00F7fY1UOv')
+const stripe = require('stripe')(STRIPE_SECRET_KEY)
+
 
 router.post('/', async (req, res) => {
-    console.log(sk_stripe)
+
     try {
         const {amount} = req.body
         console.log(amount)
