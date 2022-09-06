@@ -17,6 +17,16 @@ router.post('/login', async (req, res) => {
     }
 })
 
+router.post('/getUserIdByEmail', async (req, res) => {
+    const {email} = req.body
+    try {
+      const response = await User.findOne({email})
+      res.json(response._id) 
+    } catch (error) {
+      console.log('error', error)
+    }
+})
+
 module.exports = router
 
 

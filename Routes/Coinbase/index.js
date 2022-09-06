@@ -12,9 +12,10 @@ Client.init(COINBASE_API_KEY)
 router.post('/', async (req,res) => {
     try {
         const {amount, name, description} = req.body
+        console.log(amount, name, description)
         const charge = await Charge.create({
-            name: 'name',
-            description: 'description',
+            name,
+            description,
             local_price: {
                 amount: amount,
                 currency: 'USD'
